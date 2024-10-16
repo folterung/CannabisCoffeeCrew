@@ -1,5 +1,5 @@
 ---
-const { title, description, home = false } = Astro.props;
+const { tabText, home = false } = Astro.props;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -17,10 +17,81 @@ const { title, description, home = false } = Astro.props;
 
   <meta name="msapplication-TileColor" content="#5cebdf" />
   <meta name="theme-color" content="#ffffff" />
-  <title>{title}</title>
+  <title>{tabText}</title>
 
   <link rel="stylesheet" href="/global.css">
   <style is:global>
+
+    .bio-image {
+      background-image: url(/images/nuke.jpg);
+      background-position: center;
+      background-size: contain;
+      width: 400px;
+      height: 400px;
+      position: relative;
+    }
+
+    .ccc-grid-item_nametag {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      height: 30px;
+      background-color: #003600;
+      color: #fff;
+      font-weight: bold;
+      line-height: 30px;
+    }
+
+    .ccc-grid {
+      display: flex;
+      flex-direction: row;
+      column-gap: 15px;
+      row-gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .ccc-grid-item {
+      box-shadow: 1px 1px 4px #222;
+    }
+
+    .ccc-grid-item_text {
+      max-width: 350px;
+      padding: 15px 10px 25px 10px;
+      margin: 0 auto;
+    }
+
+    .ccc-h2 {
+      text-align: center;
+      border-top: 2px solid #003600;
+      border-bottom: 2px solid #003600;
+      color: #317620;
+      text-shadow: 1px 1px #115600;
+    }
+
+    .ccc-text-content {
+      padding: 10px 15px;
+    }
+
+    .ccc-banner {
+      height: 480px;
+      width: auto;
+      background-image: url(/images/ccc_logo_source_rectrangle_crop.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      box-shadow: 2px 2px 4px #222;
+    }
+
+    .content-container {
+      max-width: 1445px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
 
     :root {
     
@@ -56,11 +127,9 @@ const { title, description, home = false } = Astro.props;
     }
 
     body {
-      display: flex;
-      flex-direction: column;
+      display: block;
       justify-content: center;
       min-height: 100vh;
-      padding: 5rem 0 4rem;
     }
 
     h1, h2, h3 {
@@ -128,6 +197,14 @@ const { title, description, home = false } = Astro.props;
       width: min(90vw, 900px);
     }
 
+    .container {
+      /* background-image: url("/images/ccc_logo_source_rectrangle_crop.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 100%;
+      height: 400px; */
+    }
+
     .heading {
       color: var(--heading);
       font-size: 2.5rem;
@@ -175,22 +252,37 @@ const { title, description, home = false } = Astro.props;
     }
   </style>
 </head>
+
 <body>
-  <header class="container">
-    <h1 class="heading">{title}</h1>
-
-    <p class="description">{description}</p>
-
-    {home !== true && (
+  <div class="content-container">
+    <header class="ccc-banner"></header>
+    <h2 class="ccc-h2">About Us</h2>
+    <div class="ccc-text-content">Lorem ipsum odor amet, consectetuer adipiscing elit. Phasellus duis consequat feugiat faucibus ante massa sed tortor. Phasellus interdum lacinia himenaeos pretium tincidunt. Ultrices facilisi platea habitant curae sit nascetur ullamcorper. Torquent euismod varius pharetra pulvinar, eget netus ex montes cras. Donec eros nisi mus maecenas arcu himenaeos at phasellus bibendum.</div>
+    <h2 class="ccc-h2">Meet the Crew</h2>
+    <div class="ccc-grid">
+      <div class="ccc-grid-item">
+        <div class="bio-image">
+          <div class="ccc-grid-item_nametag">TheBipolarNuke</div>
+        </div>
+        <div class="ccc-grid-item_text">
+          What's up everyone! I am one of your hosts T.J. also known as Nuke.
+          <br/><br/>
+          I am originally from the South out in the country and now I am enjoying city life. I served in the U.S. Navy for 6 years as a Nuclear Machinist Mate. I have been a video editor for a news organization and have been a radio show producer for a popular radio station in the upstate of SC. Now i am a disable vet here to make content and share my stories and life perspectives.
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    <!-- {home !== true && (
       <p>
         <a href="/">&larr; back to home</a>
       </p>
-    )}
+    )} -->
   </header>
 
   <slot />
 
-  <footer class="footer">
+  <!-- <footer class="footer">
     <nav>
       <ul>
         <li>
@@ -210,7 +302,7 @@ const { title, description, home = false } = Astro.props;
         </li>
       </ul>
     </nav>
-  </footer>
+  </footer> -->
 
 </body>
 </html>
