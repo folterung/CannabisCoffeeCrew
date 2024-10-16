@@ -22,6 +22,31 @@ const { tabText, home = false } = Astro.props;
   <link rel="stylesheet" href="/global.css">
   <style is:global>
 
+    @font-face {
+      font-family: KenyanCoffeeRegular;
+      src: url(/fonts/kenyan_coffee_rg.otf);
+    }
+
+    @font-face {
+      font-family: video;
+      src: url(/fonts/video.ttf);
+    }
+
+    @font-face {
+      font-family: videoGradient;
+      src: url(/fonts/video-gradient.ttf);
+    }
+
+    @font-face {
+      font-family: videotype;
+      src: url(/fonts/videotype.otf);
+    }
+
+    @font-face {
+      font-family: Tagster;
+      src: url(/fonts/tagster.ttf);
+    }
+
     .bio-image {
       background-image: url(/images/nuke.jpg);
       background-position: center;
@@ -41,7 +66,9 @@ const { tabText, home = false } = Astro.props;
       background-color: #003600;
       color: #fff;
       font-weight: bold;
-      line-height: 30px;
+      line-height: 26px;
+      font-family: videotype, sans-serif;
+      font-size: 24px;
     }
 
     .ccc-grid {
@@ -68,11 +95,26 @@ const { tabText, home = false } = Astro.props;
       border-top: 2px solid #003600;
       border-bottom: 2px solid #003600;
       color: #317620;
-      text-shadow: 1px 1px #115600;
+      text-shadow: 2px 2px 2px #222;
+      font-family: KenyanCoffeeRegular, sans-serif;
+      font-size: 72px;
+      letter-spacing: 2px;
+      position: relative;
+    }
+
+    .ccc-h2_backdrop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #444;
+      opacity: .5;
     }
 
     .ccc-text-content {
-      padding: 10px 15px;
+      padding: 10px 30px;
+      text-align: center;
     }
 
     .ccc-banner {
@@ -108,7 +150,6 @@ const { tabText, home = false } = Astro.props;
       --card-radius: var(--border-radius-3);
       --font-primary: Pacaembu, sans-serif;
       --font-secondary: Mulish, sans-serif;
-
     }
 
     * {
@@ -257,7 +298,11 @@ const { tabText, home = false } = Astro.props;
   <div class="content-container">
     <header class="ccc-banner"></header>
     <h2 class="ccc-h2">About Us</h2>
-    <div class="ccc-text-content">Lorem ipsum odor amet, consectetuer adipiscing elit. Phasellus duis consequat feugiat faucibus ante massa sed tortor. Phasellus interdum lacinia himenaeos pretium tincidunt. Ultrices facilisi platea habitant curae sit nascetur ullamcorper. Torquent euismod varius pharetra pulvinar, eget netus ex montes cras. Donec eros nisi mus maecenas arcu himenaeos at phasellus bibendum.</div>
+    <div class="ccc-text-content">
+      Welcome to the Cannabis Coffee Crew Podcast, where deep conversations brew over a cup of coffee and a cloud of cannabis smoke. We are a group of four passionate hosts who dive into everything from philosophical musings to conspiracy theories, always with an open mind and a dash of humor.
+
+Our goal is simple: to spark thought, question the norm, and connect with listeners who enjoy exploring life’s deeper, and sometimes stranger, sides. Whether you’re here for a thought-provoking debate or just to relax and enjoy the ride, we’re glad to have you with us on this journey. Tune in, grab a cup (and a puff), and let’s dive into the unknown together.
+    </div>
     <h2 class="ccc-h2">Meet the Crew</h2>
     <div class="ccc-grid">
       <div class="ccc-grid-item">
@@ -272,12 +317,6 @@ const { tabText, home = false } = Astro.props;
       </div>
     </div>
   </div>
-  
-    <!-- {home !== true && (
-      <p>
-        <a href="/">&larr; back to home</a>
-      </p>
-    )} -->
   </header>
 
   <slot />
