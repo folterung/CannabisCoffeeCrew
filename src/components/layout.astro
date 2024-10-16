@@ -6,8 +6,8 @@ const { tabText, home = false } = Astro.props;
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="preload" href="/fonts/PacaembuVar-subset.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="/fonts/MulishVar-subset.woff2" as="font" type="font/woff2" crossorigin>
+  <link href="/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+  <link href="/fontawesome/css/brands.min.css" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -28,23 +28,26 @@ const { tabText, home = false } = Astro.props;
     }
 
     @font-face {
-      font-family: video;
-      src: url(/fonts/video.ttf);
-    }
-
-    @font-face {
-      font-family: videoGradient;
-      src: url(/fonts/video-gradient.ttf);
-    }
-
-    @font-face {
       font-family: videotype;
       src: url(/fonts/videotype.otf);
     }
 
-    @font-face {
-      font-family: Tagster;
-      src: url(/fonts/tagster.ttf);
+    .ccc-icon-bar {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      column-gap: 25px;
+      margin-top: 30px;
+    }
+
+    .ccc-icon {
+      font-size: 65px;
+      color: #2d0203;
+    }
+
+    .ccc-icon:hover {
+      cursor: pointer;
+      color: #4d2223;
     }
 
     .bio-image {
@@ -292,12 +295,32 @@ const { tabText, home = false } = Astro.props;
       width: 100%;
     }
   </style>
+  <script>
+    window['ccc'] = {};
+
+    const ccc = window['ccc'];
+
+    ccc.goto = goto;
+
+    function goto(urlName) {
+      const urls = {
+        'twitter': 'https://x.com/TheCannCoffCrew',
+        'instagram': 'https://www.instagram.com/cannabiscoffeecrew'
+      };
+
+      window.open(urls[urlName]);
+    }
+  </script>
 </head>
 
 <body>
   <div class="content-container">
     <header class="ccc-banner"></header>
-    <h2 class="ccc-h2">About Us</h2>
+    <div class="ccc-icon-bar">
+      <i class="ccc-icon fa-brands fa-x-twitter" onclick="ccc.goto('twitter')"></i>
+      <i class="ccc-icon fa-brands fa-instagram" onclick="ccc.goto('instagram')"></i>
+    </div>
+    <h2 class="ccc-h2" style={{ marginTop: '30px' }}>About Us</h2>
     <div class="ccc-text-content">
       Welcome to the Cannabis Coffee Crew Podcast, where deep conversations brew over a cup of coffee and a cloud of cannabis smoke. We are a group of four passionate hosts who dive into everything from philosophical musings to conspiracy theories, always with an open mind and a dash of humor.
 
