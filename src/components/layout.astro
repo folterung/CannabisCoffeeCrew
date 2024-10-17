@@ -51,12 +51,25 @@ const { tabText, home = false } = Astro.props;
     }
 
     .bio-image {
-      background-image: url(/images/nuke.jpg);
       background-position: center;
-      background-size: contain;
+      background-size: cover;
+      background-repeat: no-repeat;
       width: 400px;
       height: 400px;
       position: relative;
+      background-color: #222;
+    }
+
+    .bio-image.nuke {
+      background-image: url(/images/nuke.jpg);
+    }
+
+    .bio-image.folt {
+      background-image: url(/images/folt_and_pandar.jpg);
+    }
+
+    .bio-image.pandar {
+      background-image: url(/images/pandar_and_folt.jpg);
     }
 
     .ccc-grid-item_nametag {
@@ -77,14 +90,15 @@ const { tabText, home = false } = Astro.props;
     .ccc-grid {
       display: flex;
       flex-direction: row;
-      column-gap: 15px;
-      row-gap: 15px;
+      column-gap: 25px;
+      row-gap: 25px;
       flex-wrap: wrap;
       justify-content: center;
     }
 
     .ccc-grid-item {
       box-shadow: 1px 1px 4px #222;
+      background-color: #efefef;
     }
 
     .ccc-grid-item_text {
@@ -161,13 +175,14 @@ const { tabText, home = false } = Astro.props;
 
     html,
     body {
-
       color: var(--text);
       font-family: var(--font-secondary);
       font-size: 18px;
       line-height: 1.45;
       margin: 0;
       padding: 0;
+      background-color: #CB9472;
+      padding-bottom: 50px;
     }
 
     body {
@@ -322,20 +337,48 @@ const { tabText, home = false } = Astro.props;
     </div>
     <h2 class="ccc-h2" style={{ marginTop: '30px' }}>About Us</h2>
     <div class="ccc-text-content">
-      Welcome to the Cannabis Coffee Crew Podcast, where deep conversations brew over a cup of coffee and a cloud of cannabis smoke. We are a group of four passionate hosts who dive into everything from philosophical musings to conspiracy theories, always with an open mind and a dash of humor.
+      Welcome to the Cannabis Coffee Crew, where deep conversations brew over a cup of coffee and a cloud of cannabis smoke. We are a group of passionate hosts who dive into everything from philosophical musings to conspiracy theories, always with an open mind and a dash of humor.
 
-Our goal is simple: to spark thought, question the norm, and connect with listeners who enjoy exploring life’s deeper, and sometimes stranger, sides. Whether you’re here for a thought-provoking debate or just to relax and enjoy the ride, we’re glad to have you with us on this journey. Tune in, grab a cup (and a puff), and let’s dive into the unknown together.
+      Our goal is simple: to spark thought, question the norm, and connect with listeners who enjoy exploring life’s deeper, and sometimes stranger, sides. Whether you’re here for a thought-provoking debate or just to relax and enjoy the ride, we’re glad to have you with us on this journey. Tune in, grab a cup (and a puff), and let’s dive into the unknown together.
     </div>
     <h2 class="ccc-h2">Meet the Crew</h2>
     <div class="ccc-grid">
       <div class="ccc-grid-item">
-        <div class="bio-image">
+        <div class="bio-image nuke">
           <div class="ccc-grid-item_nametag">TheBipolarNuke</div>
         </div>
         <div class="ccc-grid-item_text">
           What's up everyone! I am one of your hosts T.J. also known as Nuke.
           <br/><br/>
           I am originally from the South out in the country and now I am enjoying city life. I served in the U.S. Navy for 6 years as a Nuclear Machinist Mate. I have been a video editor for a news organization and have been a radio show producer for a popular radio station in the upstate of SC. Now I am a disabled vet here to make content and share my stories and life perspectives.
+        </div>
+      </div>
+
+      <div class="ccc-grid-item">
+        <div class="bio-image folt">
+          <div class="ccc-grid-item_nametag">Folterung</div>
+        </div>
+        <div class="ccc-grid-item_text">
+          Hey there! I'm Kevin Warnock, but you might know me as Folterung, or simply Folt, Folter, or Kev. I'm one of the hosts of the Cannabis Coffee Crew.
+          <br/><br/>
+          By day, I'm a Senior Software Engineer and Software Solutions Architect, and I'm also an author—but my passions don't stop there. When I'm not in front of a computer, you'll probably find me with a hammer at the forge, diving into blacksmithing, or exploring digital art. I love working with my hands, whether it’s crafting something physical or creating a digital masterpiece.
+          <br/><br/>
+          Music is my constant companion; I have a soundtrack for life that fuels my energy and creativity. Whether I'm coding, relaxing, or brainstorming new podcast ideas, there's always a beat playing to match my mood.
+          <br/><br/>
+          I'm 38 years old, married, and a proud father of four incredible kids. I'm thrilled to share my thoughts and opinions on the Cannabis Coffee Crew, but even more, I love hearing from others and getting into real conversations. I can't wait to chat with our listeners and dive into all the wild, thoughtful, and fun topics we explore together.
+        </div>
+      </div>
+
+      <div class="ccc-grid-item">
+        <div class="bio-image pandar">
+          <div class="ccc-grid-item_nametag">Pandar</div>
+        </div>
+        <div class="ccc-grid-item_text">
+          Hey Y'all! I'm Amanda Warnock, but you can call me Mandar_el_Pandar or just Pandar. Some people even call me Panda, but definitely never Mandy! I'm one of those people who love exploring creativity in every corner of life, whether it's crafting, cooking, or diving into an imaginative story.
+          <br/><br/>
+          Before life brought me into the world of homeschooling and writing, I spent years managing teams and serving tables, learning all about hard work and hustle as a General Manager at Domino's and as a waitress. Then, motherhood took over, and I embraced every bit of it. For over ten years, I've been a stay-at-home mom, raising my amazing kids while also channeling my creative energy into starting a custom home bakery—Panda Cakes. There, I got to combine my passion for baking with artistic designs, making cakes that were not just tasty but also little pieces of art.
+          <br/><br/>
+          These days, I'm balancing my roles as a homeschooling mom and an author, continuing my love for creativity. Whether it's doodling, working on diamond art, crafting with my Cricut, or whipping up some bomb-ass Southern cooking, I'm always finding ways to express myself. 
         </div>
       </div>
     </div>
