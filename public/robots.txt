@@ -1,2 +1,4 @@
 User-agent: *
 Disallow: /
+
+Sitemap: https://cannabiscoffeecrew.com/sitemap-index.xml
