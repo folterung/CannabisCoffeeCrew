@@ -45,6 +45,13 @@ const { tabText, home = false } = Astro.props;
       color: #2d0203;
     }
 
+    @media (max-width: 767px) {
+      .ccc-icon {
+        font-size: 45px;
+        color: #2d0203;
+      }
+    }
+
     .ccc-icon:hover {
       cursor: pointer;
       color: #4d2223;
@@ -357,8 +364,14 @@ const { tabText, home = false } = Astro.props;
       <a href="https://x.com/TheCannCoffCrew">
         <i class="ccc-icon fa-brands fa-x-twitter"></i>
       </a>
+      <a href="https://www.tiktok.com/@cannabiscoffeecrew">
+        <i class="ccc-icon fa-brands fa-tiktok"></i>
+      </a>
       <a href="https://www.instagram.com/cannabiscoffeecrew">
         <i class="ccc-icon fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.youtube.com/@CannabisCoffeeCrew">
+        <i class="ccc-icon fa-brands fa-youtube"></i>
       </a>
     </div>
     <h2 class="ccc-h2" style={{ marginTop: '30px' }}>About Us</h2>
